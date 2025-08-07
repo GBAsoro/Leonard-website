@@ -123,7 +123,7 @@ nav ul li a:hover {
 }
 
 .about-me {
-  padding: 80px 0;
+  padding: 20px 0;
   text-align: center;
 }
 
@@ -208,7 +208,7 @@ nav ul li a:hover {
 
 /* My Stack Section */
 .my-stack {
-  padding: 80px 0;
+  padding: 20px 0;
   text-align: center;
 }
 
@@ -246,7 +246,7 @@ nav ul li a:hover {
 
 /* Services Section */
 .services {
-  padding: 80px 0;
+  padding: 20px 0;
   text-align: center;
 }
 
@@ -288,7 +288,7 @@ nav ul li a:hover {
 
 /* Featured Projects Section */
 .featured-projects {
-  padding: 80px 0;
+  padding: 20px 0;
   text-align: center;
 }
 
@@ -351,7 +351,7 @@ nav ul li a:hover {
 
 /* Testimonials Section */
 .testimonials {
-  padding: 80px 0;
+  padding: 20px 0;
   text-align: center;
 }
 
@@ -413,7 +413,7 @@ nav ul li a:hover {
 
 /* Contact Section */
 .contact {
-  padding: 80px 0;
+  padding: 20px 0;
   text-align: center;
 }
 
@@ -517,8 +517,68 @@ footer p {
   color: #777;
 }
 
-/* Responsive Design */
+/* Responsive Menu Styles */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #333;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
 @media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    background-color: #f8f8f8;
+    z-index: 10;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  nav ul {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav ul li a {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
   .hero .container,
   .about-content {
     flex-direction: column;
@@ -555,5 +615,89 @@ footer p {
 
   .contact-form-container {
     width: 100%;
+  }
+}
+
+/* Modal Styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 100; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.7); /* Black w/ opacity */
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 30px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more responsive */
+  max-width: 600px;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: left;
+}
+
+.modal-content h2 {
+  color: #dc3545;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.modal-content ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.modal-content ul li {
+  margin-bottom: 10px;
+}
+
+.close-button {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: #333;
+  text-decoration: none;
+}
+
+/* ... existing CSS styles ... */
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  /* Hero Section: Column Reverse */
+  .hero .container {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  /* Adjustments for the Hero Section */
+  .hero-content h1 {
+    font-size: 1.5rem; /* Reduced from 2.5rem */
+  }
+
+  .hero-content .subtitle {
+    font-size: 0.9rem; /* Reduced from original size */
+  }
+
+  .hero-content p {
+    font-size: 0.8rem; /* Reduced from original size */
   }
 }

@@ -16,20 +16,25 @@
     <header>
       <div class="container">
         <div class="logo">Leonard Fidelis</div>
-        <nav>
+        <nav id="nav-menu">
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Skills</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#my-stack">Skills</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#featured-projects">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
+        <button id="menu-toggle" class="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </header>
 
-    <section class="hero">
+    <section id="hero" class="hero">
       <div class="container">
         <div class="hero-content">
           <h1>Leonard Fidelis</h1>
@@ -59,7 +64,7 @@
 
     <hr />
 
-    <section class="about-me">
+    <section id="about" class="about-me">
       <div class="container">
         <h2 class="section-title">About Me</h2>
         <div class="about-content">
@@ -99,7 +104,7 @@
               12 months. Don't take my word for it, check it out here.
             </p>
             <a
-              href="https://www.youtube.com/channel/YOUR_YOUTUBE_CHANNEL"
+              href="https://youtube.com/@spatialdatahub"
               class="youtube-button"
               target="_blank"
             >
@@ -110,7 +115,7 @@
       </div>
     </section>
 
-    <section class="my-stack">
+    <section id="my-stack" class="my-stack">
       <div class="container">
         <h2 class="section-title">My Stack</h2>
         <div class="stack-list-container">
@@ -128,24 +133,24 @@
 
     <hr />
 
-    <section class="services">
+    <section id="services" class="services">
       <div class="container">
         <h2 class="section-title">Services</h2>
         <div class="services-container">
           <div class="service-card">
             <span class="icon">📝</span>
             <h3>Technical Writing</h3>
-            <a href="#">View More ➔</a>
+            <a href="#" id="technical-writing-more">View More ➔</a>
           </div>
           <div class="service-card">
             <span class="icon">🗺️</span>
             <h3>Digital Cartography</h3>
-            <a href="#">View More ➔</a>
+            <a href="#" id="digital-cartography-more">View More ➔</a>
           </div>
           <div class="service-card">
             <span class="icon">📊</span>
-            <h3>Spatial Analysis</h3>
-            <a href="#">View More ➔</a>
+            <h3 style="font-size: 1.5rem">Spatial Analysis</h3>
+            <a href="#" id="spatial-analysis-more">View More ➔</a>
           </div>
         </div>
       </div>
@@ -153,7 +158,7 @@
 
     <hr />
 
-    <section class="featured-projects">
+    <section id="featured-projects" class="featured-projects">
       <div class="container">
         <h2 class="section-title">Featured Projects</h2>
         <div class="projects-container">
@@ -199,7 +204,9 @@
             <a href="#">Read More ➔</a>
           </div>
         </div>
-        <button class="view-all-button">View all Projects ☰</button>
+        <a href="/projects/projects.html" class="view-all-link">
+          <button class="view-all-button">View all Projects ☰</button>
+        </a>
       </div>
     </section>
 
@@ -248,21 +255,21 @@
 
     <hr />
 
-    <section class="contact">
+    <section id="contact" class="contact">
       <div class="container">
         <h2 class="section-title">First, let's catchup on your project...</h2>
         <div class="contact-content">
           <div class="contact-info-cards">
             <div class="contact-card">
-              <span class="icon"></span>
-              <p>leonardfidelis@gmail.com</p>
+              <span class="icon">✉️</span>
+              <p>hello@agbolahan.site</p>
             </div>
             <div class="contact-card">
-              <span class="icon"></span>
+              <span class="icon">🐦</span>
               <p>@fideliscleo</p>
             </div>
             <div class="contact-card">
-              <span class="icon"></span>
+              <span class="icon">🔗</span>
               <p>Leonard Fidelis</p>
             </div>
           </div>
@@ -292,9 +299,68 @@
 
     <footer>
       <div class="container">
-        <p>Copyright © 2023. Leonard Fidelis. All rights reserved</p>
+        <p>Copyright © 2025. Leonard Fidelis. All rights reserved</p>
       </div>
     </footer>
+
+    <!-- Technical Writing Modal -->
+    <div id="technical-writing-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Technical Writing Services</h2>
+        <ul>
+          <li>
+            Curated Software/Product Documentation and error codes solutions for
+            hitch-free use
+          </li>
+          <li>
+            Written conversational How-To guides, video outlines and tutorials
+          </li>
+          <li>
+            Documentation of Engineering and Geo-technical progress reports,
+            story maps, more..
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Digital Cartography Modal -->
+    <div id="digital-cartography-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Digital Cartography</h2>
+        <ul>
+          <li>
+            Designed maps and visualizations to influence location based
+            decisions.
+          </li>
+          <li>Created interactive web maps and published on GitHub</li>
+          <li>Represent data using story maps.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Spatial Analysis Modal -->
+    <div id="spatial-analysis-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Spatial Analysis</h2>
+        <ul>
+          <li>
+            Designed geospatial databases using complex SQL aggregation
+            statements and clauses
+          </li>
+          <li>
+            Utilised python libraries and Google Maps API to populate a spatial
+            database of geocoded addreses.
+          </li>
+          <li>
+            Written spatial queries to draw location based insights from GIS
+            datasets.
+          </li>
+        </ul>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>

@@ -1,0 +1,203 @@
+/* General Body and Container Styles */
+body {
+  font-family: "DM Sans", sans-serif;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ...existing CSS above this line... */
+
+header {
+  background-color: #f8f8f8;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+nav ul li a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+}
+
+nav ul li a:hover {
+  color: #dc3545;
+}
+
+/* Responsive Menu Styles (Hamburger Icon) */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #333;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    background-color: #f8f8f8;
+    z-index: 10;
+    border-bottom: 1px solid #eee;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  nav ul {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav ul li a {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Section Title Styling */
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: #dc3545;
+}
+
+/* Featured Projects Section */
+.featured-projects {
+  padding: 20px 0;
+  text-align: center;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.project-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  overflow: hidden;
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.project-card h3 {
+  font-size: 1.2rem;
+  margin: 15px 15px 10px;
+}
+
+.project-card p {
+  font-size: 0.9rem;
+  color: #777;
+  margin: 0 15px 15px;
+}
+
+.project-card a {
+  display: inline-block;
+  color: #dc3545;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 15px 15px;
+}
+
+/* Button Styling */
+.view-all-link {
+  text-decoration: none;
+}
+
+.view-all-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.view-all-button:hover {
+  background-color: #c82333;
+}
