@@ -687,17 +687,4 @@ footer p {
     flex-direction: column-reverse;
     text-align: center;
   }
-
-  /* Adjustments for the Hero Section */
-  .hero-content h1 {
-    font-size: 1.5rem; /* Reduced from 2.5rem */
-  }
-
-  .hero-content .subtitle {
-    font-size: 0.9rem; /* Reduced from original size */
-  }
-
-  .hero-content p {
-    font-size: 0.8rem; /* Reduced from original size */
-  }
 }
