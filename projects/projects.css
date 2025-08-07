@@ -231,3 +231,17 @@ nav ul li a:hover {
     grid-template-columns: repeat(1, 1fr); /* 1 card per row */
   }
 }
+
+/* Footer */
+footer {
+  padding: 20px 0;
+  text-align: center;
+  background-color: #f8f8f8;
+  border-top: 1px solid #eee;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #777;
+}

@@ -688,3 +688,37 @@ footer p {
     text-align: center;
   }
 }
+
+/* ... existing CSS styles ... */
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+/* Tablet screens (up to 1024px) */
+@media (max-width: 1024px) {
+  .stats {
+    flex-wrap: wrap; /* Allows items to wrap to the next line */
+    justify-content: center;
+  }
+
+  .stat-item {
+    flex: 1 1 45%; /* Two items per row with some spacing */
+    margin: 10px;
+  }
+}
+
+/* Mobile screens (up to 767px) */
+@media (max-width: 767px) {
+  .stats {
+    flex-direction: column; /* Stacks items vertically */
+    align-items: center;
+  }
+
+  .stat-item {
+    width: 100%; /* One item per row */
+    margin: 10px 0;
+  }
+}
