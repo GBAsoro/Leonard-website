@@ -113,3 +113,41 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("contact-form");
+  const formMessages = document.getElementById("form-messages");
+
+  if (form) {
+    form.addEventListener("submit", async function (event) {
+      event.preventDefault();
+
+      formMessages.textContent = "Sending...";
+      formMessages.style.color = "black";
+
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message").value;
+
+      try {
+        const response = await fetch(this.action, {
+          method: this.method,
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, email, message }),
+        });
+
+        if (response.ok) {
+          formMessages.textContent = "Message sent successfully!";
+          formMessages.style.color = "green";
+          this.reset();
+        } else {
+          formMessages.textContent = "Oops! Something went wrong.";
+          formMessages.style.color = "red";
+        }
+      } catch (error) {
+        formMessages.textContent = "An error occurred. Please try again later.";
+        formMessages.style.color = "red";
+        console.error("Submission error:", error);
+      }
+    });
+  }
+});
