@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Modal functionality for Digital Cartography
+  // Modal functionality for GIS Project Management
   const digitalCartographyButton = document.getElementById(
     "digital-cartography-more"
   );
